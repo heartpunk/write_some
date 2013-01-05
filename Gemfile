@@ -1,15 +1,23 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
-gem 'rails',     path: '/Users/tehgeekmeister/code/rails'
-gem 'journey',   git: 'git://github.com/rails/journey.git'
+gem 'rails',     github: 'rails/rails'
+gem 'journey',   github: 'rails/journey'
 gem 'arel'
 gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+group :assets, :production do
   gem 'sprockets-rails', github: 'rails/sprockets-rails'
   gem 'sass-rails',   github: 'rails/sass-rails'
   gem 'coffee-rails', github: 'rails/coffee-rails'

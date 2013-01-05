@@ -27,7 +27,7 @@ WriteSome::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Whether to fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -40,7 +40,7 @@ WriteSome::Application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -71,7 +71,7 @@ WriteSome::Application.configure do
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL).
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
