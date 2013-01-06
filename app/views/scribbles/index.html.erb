@@ -1,25 +1,12 @@
-<h1>Listing scribbles</h1>
-
-<table>
-  <thead>
-    <tr>
-        <th>Text</th>
-        <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= content_tag_for(:tr, @scribbles) do |scribble| %>
-        <td><%= scribble.text %></td>
-        <td><%= link_to 'Show', scribble %></td>
-      <td><%= link_to 'Edit', edit_scribble_path(scribble) %></td>
-      <td><%= link_to 'Destroy', scribble, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tbody>
-</table>
-
+<br />
+<%= content_tag_for(:div, @scribbles, style: 'position:relative;min-width:200px;') do |scribble| %>
+  <div style='max-width:85%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:20ex;'><%= raw(scribble.text) %></div>
+  <div style="position:absolute;right:0px;top:0px;">
+    <span><%= link_to 'View', scribble %></span>
+    <span><%= link_to 'Edit', edit_scribble_path(scribble) %></span>
+    <span><%= link_to 'Delete', scribble, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+  </div>
+<% end %>
 <br />
 
-<%= link_to 'New Scribble', new_scribble_path %>
+<%= link_to 'want to write something new?', scribbles_path, method: :post, style: 'position:absolute;bottom:10px;' %>

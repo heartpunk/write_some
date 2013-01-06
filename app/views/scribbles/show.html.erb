@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @scribble.text %>
-</p>
-
-
 <%= link_to 'Edit', edit_scribble_path(@scribble) %> |
 <%= link_to 'Back', scribbles_path %>
+
+<p>
+  <pre>
+    <%= @scribble.text %>
+  </pre>
+</p>
