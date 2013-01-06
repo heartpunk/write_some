@@ -1,4 +1,5 @@
 WriteSome::Application.routes.draw do
+  root to: 'scribbles#index'
   resources :scribbles
 
   # The priority is based upon order of creation: first created -> highest priority.
