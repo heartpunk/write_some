@@ -1,5 +1,8 @@
 WriteSome::Application.routes.draw do
   root to: 'scribbles#index'
+  get 'home' => 'scribbles#index'
+  get 'about' => 'application#about'
+  get 'register' => 'application#register'
   resources :scribbles
 
   # The priority is based upon order of creation: first created -> highest priority.

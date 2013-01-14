@@ -10,11 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field" style='height:100%;'>
+  <div style='height:100%;'>
     <%= f.text_area :text, style: 'width:100%;height:100%' %>
   </div>
-  <div class="actions">
-    <%= f.submit 'save', class: 'btn' %>
-  </div>
+  <span class='label' id='save_indicator' style='position:fixed;top:70px;right:130px;'><%= @scribble.persisted? ? 'saved.' : 'new.' %></span>
 <% end %>

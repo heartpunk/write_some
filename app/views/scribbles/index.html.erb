@@ -1,12 +1,12 @@
-<br />
-<%= content_tag_for(:div, @scribbles, style: 'position:relative;min-width:200px;') do |scribble| %>
-  <div style='max-width:85%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:20ex;'><%= raw(scribble.text) %></div>
+<h2>here's your scribbles.</h2>
+<%= content_tag_for(:div, @scribbles, class: 'well', style: 'position:relative;min-width:200px;') do |scribble| %>
+  <div style='max-width:85%;padding-right:20ex;padding-bottom:15px;padding-top:5px;'><%= raw(scribble.text) %></div>
   <div style="position:absolute;right:0px;top:0px;">
-    <span><%= link_to 'View', scribble %></span>
-    <span><%= link_to 'Edit', edit_scribble_path(scribble) %></span>
-    <span><%= link_to 'Delete', scribble, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <div class='btn-group'>
+      <%= link_to 'View',  scribble, class: 'btn' %>
+      <%= link_to 'Edit',  edit_scribble_path(scribble), class: 'btn' %>
+      <%= link_to 'Delete',  scribble, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
+    </div>
   </div>
 <% end %>
 <br />
-
-<%= link_to 'want to write something new?', scribbles_path, method: :post, style: 'position:absolute;bottom:10px;' %>

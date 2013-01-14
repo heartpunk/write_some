@@ -4,7 +4,7 @@ class ScribblesController < ApplicationController
   # GET /scribbles
   # GET /scribbles.json
   def index
-    @scribbles = Scribble.all
+    @scribbles = Scribble.all.reject {|scr| scr.text.blank?}
 
     respond_to do |format|
       format.html # index.html.erb
