@@ -4,7 +4,7 @@ module ApplicationHelper
 		NavbarItem.new('/home', 'home'),
 		NavbarItem.new('/about', 'about'),
 		NavbarItem.new('/register', 'register'),
-		# NavbarItem.new('/scribbles/new', 'new scribble'),
+		NavbarItem.new('/scribbles/new', 'new scribble'),
 	]
 
 	def navbar_markup
