@@ -39,12 +39,11 @@ class ScribblesController < ApplicationController
   # POST /scribbles
   # POST /scribbles.json
   def create
-    scribble_params ||= {text: ''}
     @scribble = Scribble.new(scribble_params)
 
     respond_to do |format|
       if @scribble.save
-        format.html { redirect_to edit_scribble_url(@scribble), notice: 'Scribble was successfully created.' }
+        format.html { redirect_to edit_scribble_url(@scribble) }
         format.json { render json: @scribble, status: :created, location: @scribble }
       else
         format.html { render action: "new" }
@@ -58,7 +57,7 @@ class ScribblesController < ApplicationController
   def update
     respond_to do |format|
       if @scribble.update(scribble_params)
-        format.html { redirect_to @scribble, notice: 'Scribble was successfully updated.' }
+        format.html { redirect_to @scribble }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
