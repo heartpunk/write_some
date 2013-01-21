@@ -11,7 +11,7 @@ watch_form = () ->
     set_saving(save_indicator)
     input.attr('data', input.val())
     form = input.parentsUntil('form').parent()[0]
-    $.ajax(form.action + '.json?' + $(form).serialize(), {type: 'PUT', success: () -> set_saved(save_indicator, body_was)})
+    $.ajax(form.action + '.json', {type: 'PUT', data: $(form).serialize(), success: () -> set_saved(save_indicator, body_was)})
 
 set_saving = (save_indicator) ->
   save_indicator.removeClass('label-success').addClass('label-info').text('saving...')
