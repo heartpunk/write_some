@@ -1,1 +1,2 @@
-web: bundle exec rails server thin -p $PORT -e production
+web: bin/rails server thin -p $PORT -e production
+console: bin/rails console
