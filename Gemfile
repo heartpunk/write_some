@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 
-gem 'rails',     github: 'rails/rails'
-gem 'journey',   github: 'rails/journey'
+gem 'rails', '~>4.0'
+gem 'journey'
 gem 'arel'
-gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
+gem 'activerecord-deprecated_finders'
 
 group :development, :test do
   gem 'sqlite3'
@@ -18,9 +18,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets, :production do
-  gem 'sprockets-rails', github: 'rails/sprockets-rails'
-  gem 'sass-rails',   github: 'rails/sass-rails'
-  gem 'coffee-rails', github: 'rails/coffee-rails'
+  gem 'sprockets-rails'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
