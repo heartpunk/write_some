@@ -26,11 +26,14 @@ WriteSome::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Whether to fallback to assets pipeline if a precompiled asset is missed.
-  # config.assets.compile = true
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
+
+  # Version of your assets, change this if you want to expire all your assets.
+  config.assets.version = '1.0'
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
@@ -40,7 +43,7 @@ WriteSome::Application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -68,10 +71,6 @@ WriteSome::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL).
-  config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
