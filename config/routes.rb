@@ -1,4 +1,5 @@
 WriteSome::Application.routes.draw do
+  devise_for :people
   root to: 'scribbles#index'
   get 'home' => 'scribbles#index'
   get 'about' => 'application#about'
