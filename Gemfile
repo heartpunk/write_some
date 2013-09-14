@@ -6,6 +6,7 @@ gem 'journey'
 gem 'arel'
 gem 'activerecord-deprecated_finders'
 gem 'devise'
+gem 'unicorn'
 
 group :development, :test do
   gem 'sqlite3'
@@ -13,7 +14,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'thin'
   gem 'rails_12factor'
 end
 
