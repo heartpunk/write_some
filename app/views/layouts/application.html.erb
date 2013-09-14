@@ -11,8 +11,9 @@
   <div class='navbar navbar-fixed-top navbar-inverse'>
     <%= raw navbar_markup %>
   </div>
-    <div class='row' style='height:100%;'>
-      <%= yield %>
-    </div>
+  <%= render partial: 'shared/flash' %>
+  <div class='row' style='height:100%;'>
+    <%= yield %>
+  </div>
   </body>
 </html>
