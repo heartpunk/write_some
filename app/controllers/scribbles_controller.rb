@@ -1,10 +1,11 @@
 class ScribblesController < ApplicationController
+  before_action :authenticate_person!
   before_action :set_scribble, only: [:show, :edit, :update, :destroy]
 
   # GET /scribbles
   # GET /scribbles.json
   def index
-    @scribbles = Scribble.all.reject {|scr| scr.text.blank?}
+    @scribbles = current_person.scribbles.all.reject {|scr| scr.text.blank?}
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,7 +81,7 @@ class ScribblesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_scribble
-      @scribble = Scribble.find(params[:id])
+      @scribble = Scribble.where(id: params[:id], person: current_person)
     end
 
     # Use this method to whitelist the permissible parameters. Example:

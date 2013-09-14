@@ -2,6 +2,7 @@ class Scribble < ActiveRecord::Base
   default_scope -> { order('created_at desc') }
 
   has_many :revisions
+  belongs_to :owner
 
   after_save :append_revision
   before_destroy :delete_revisions
