@@ -1,4 +1,6 @@
 WriteSome::Application.routes.draw do
+  resources :users
+
   root to: 'scribbles#index'
   get 'home' => 'scribbles#index'
   get 'about' => 'application#about'
