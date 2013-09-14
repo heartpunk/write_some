@@ -5,6 +5,7 @@ gem 'rails', '~>4.0'
 gem 'journey'
 gem 'arel'
 gem 'activerecord-deprecated_finders'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
