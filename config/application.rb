@@ -15,7 +15,6 @@ module WriteSome
     config.filter_parameters += [:password] # Filter sensitive data.
     config.assets.enabled = true
     config.assets.version = '1.0.2'
-    Rails.logger = Logger.new(STDOUT) # for heroku
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
