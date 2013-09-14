@@ -3,7 +3,7 @@ module ApplicationHelper
 	NAVBAR_PATHS = [
 		NavbarItem.new('/home', 'home'),
 		NavbarItem.new('/about', 'about'),
-		NavbarItem.new('/register', 'register'),
+		NavbarItem.new('/people/sign_up', 'sign up'),
 		NavbarItem.new('/scribbles/new', 'new scribble'),
 	]
 
