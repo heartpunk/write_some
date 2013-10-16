@@ -11,6 +11,9 @@
   <div class='navbar navbar-fixed-top navbar-inverse'>
     <%= raw navbar_markup %>
   </div>
+  <div style='background-color:red;'>
+    <%= 'THIS INSTALL OF WRITE SOME IS UNSAFE. IF YOU ARE THE ADMINISTRATOR, PLEASE SET THE WRITE_SOME_SECRET_KEY TO A SECURE, RANDOM STRING.' if $UNSAFE_SECRET_KEY %>
+  </div>
   <%= render partial: 'shared/flash' %>
   <div class='row' style='height:100%;'>
     <%= yield %>
