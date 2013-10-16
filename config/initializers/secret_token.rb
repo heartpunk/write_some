@@ -15,6 +15,5 @@ WriteSome::Application.config.secret_key_base = if ENV['WRITE_SOME_SECRET_KEY'].
                                                    ENV['WRITE_SOME_SECRET_KEY'] !~ /#{not_so_secret_key}/
   ENV['WRITE_SOME_SECRET_KEY']
 else
-  $UNSAFE_SECRET_KEY = true
-  not_so_secret_key
+  SecureRandom.hex(40)
 end
